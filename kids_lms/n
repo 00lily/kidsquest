@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href = "Courses.css" type="text/css">
+<style>
+    @keyframes count {
+
+        from{
+            transform: translateX(-300px);
+        }
+
+        to{
+            transform: translateX(0);
+        }
+      
+    }
+
+    .number {
+        position: relative;
+        display: inline-block;
+        font-size: 45px;
+        padding: 50px;
+        margin: 30px;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+        text-align: center;
+        animation: count 1s ease-in ;
+        transition: transform .2s ease-in-out;
+    }
+
+    .number:hover {
+        transform: scale(1.5);
+    }
+
+    .number img {
+        position: absolute;
+        top: 0;
+        right: -75px;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+    
+</style>
+         <title>Courses</title>
+<script>
+    window.SpeechSynthesis.onvoices.add(new SpeechSynthesisVoice({
+        lang: 'en-US',
+        name: 'Basic Voice',
+        pitch: 1,
+        rate: 1,
+        volume: 1
+    }));
+</script>
+</head>
+
+<body>
+    <h1> Counting Numbers</h1>
+
+    <body>
+        <div class="number">
+            <span>1</span>
+            <img src="minnie.png" alt="Number 1">
+        </div>
+        <div class="number">
+            <span>2</span>
+            <img src="minnie.png" alt="Number 2">
+        </div>
+        <div class="number">
+            <span>3</span>
+            <img src="minnie.png" alt="Number 3">
+        </div>
+        <div class="number">
+            <span>4</span>
+            <img src="minnie.png" alt="Number 4">
+        </div>
+        <div class="number">
+            <span>5</span>
+            <img src="minnie.png" alt="Number 5">
+        </div>
+        <div class="number">
+            <span>6</span>
+            <img src="minnie.png" alt="Number 6">
+        </div>
+        <div class="number">
+            <span>7</span>
+            <img src="minnie.png" alt="Number 7">
+        </div>
+        <div class="number">
+            <span>8</span>
+            <img src="minnie.png" alt="Number 8">
+        </div>
+        <div class="number">
+            <span>9</span>
+            <img src="minnie.png" alt="Number 9">
+        </div>
+        <div class="number">
+            <span>10</span>
+            <img src="minnie.png" alt="Number 10">
+        </div>
+
+        <!-- Repeat the above div block for numbers 3 to 20 -->
+    </body>
+    <script>
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        numbers.forEach(number => {
+            const numberElement = document.querySelector(`.number:contains(${number})`);
+            numberElement.addEventListener('mouseover', () => {
+                const utterance = new SpeechSynthesisUtterance(`The number is ${number}`);
+                speechSynthesis.speak(utterance);
+            });
+        });
+    </script>
+
+    </body>
+</html>
+
+
+</div>
+<div class="number">
+    <span>2</span>
+    <img src="minnie/b.png" alt="Number 2">
+</div>
+<div class="number">
+    <span>3</span>
+    <img src="m1/c.png" alt="Number 3">
+</div>
+<div class="number">
+    <span>4</span>
+    <img src="sb/d.png" alt="Number 4">
+</div>
+<div class="number">
+    <span>5</span>
+    <img src="pink/e.png" alt="Number 5">
+</div>
+<div class="number">
+    <span>6</span>
+    <img src="sc/f.png" alt="Number 6">
+</div>
+<div class="number">
+    <span>7</span>
+    <img src="wbb/g.png" alt="Number 7">
+</div>
+<div class="number">
+    <span>8</span>
+    <img src="fin_jake/h.png" alt="Number 8">
+</div>
+<div class="number">
+    <span>9</span>
+    <img src="ppg1/i.png" alt="Number 9">
+</div>
+<div class="number">
+    <span>10</span>
+    <img src="minnie/j.png" alt="Number 10">
+</div>
+
+<!--Repeat the above div block for numbers 3 to 20 -->
+
