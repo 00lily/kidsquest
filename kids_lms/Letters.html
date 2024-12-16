@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet Boxes</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            padding: 40px;
+            background-image: url('images/y.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative; 
+
+        }
+
+        .box {
+            width: 170px;
+            height: 170px;
+            margin: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 80px;
+            font-weight: bold;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+        }
+        .box:hover {
+            transform: scale(1.5) rotate(5deg);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+            background-color: #45a049;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes wobble {
+            0%, 100% { transform: rotate(0); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .box.animate {
+            animation: 
+                bounce 0.5s,
+                wobble 0.5s 0.5s,
+                pulse 0.5s 1s;
+        }
+
+        .bottom1-image {
+            position: absolute;
+            bottom: -10%;
+            left: 10%;
+            transform: translateX(-50%);
+            max-width: 100%;
+            height: 280px;
+            width: 230px;
+        }
+
+        .bottom2-image {
+            position: absolute;
+            bottom: -10%;
+            left: 72%;
+            transform: translateX(-50%);
+            max-width: 100%;
+            height: 250px;
+            width: 300px;
+        }
+
+        .bottom3-image {
+            position: absolute;
+            bottom: -10%;
+            left: 23%;
+            transform: translateX(-50%);
+            max-width: 100%;
+            height: 250px;
+            width: 250px;
+        }
+
+        .bottom4-image {
+            position: absolute;
+            bottom: -10%;
+            left: 90%;
+            transform: translateX(-50%);
+            max-width: 100%;
+            height: 250px;
+            width: 250px;
+        }
+
+        .bottom5-image {
+            position: absolute;
+            bottom: -14%;
+            left: 60%;
+            transform: translateX(-50%);
+            max-width: 100%;
+            height: 300px;
+            width: 205px;
+        }
+
+        .bottom6-image {
+            position: absolute;
+            bottom: -14%;
+            left: 47%;
+            transform: translateX(-50%);
+            max-width: 100%;
+            height: 300px;
+            width: 205px;
+        }
+
+        .bottom7-image {
+            position: absolute;
+            bottom: -11%;
+            left: 35%;
+            transform: translateX(-50%);
+            max-width: 100%;
+            height: 300px;
+            width: 320px;
+        }
+
+        .top1-image {
+            position: absolute;
+            top: -8%;
+            left: 8%;
+            transform: translateX(-50%);
+            max-width: 100%;
+            height: 200px;
+            width: 200px;
+        }
+
+        .top2-image {
+            position: absolute;
+            top: -8%;
+            right: -8%;
+            transform: translateX(-50%);
+            max-width: 100%;
+            height: 250px;
+            width: 250px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <p style="position: absolute; top: -8%; width: 100%; text-align: center; font-size: 75px; font-weight: bold; color: #45a049;">Alphabet Letters</p>
+
+    <img src="images/rest.png" alt="Toy Story" class="bottom1-image">
+    <img src="images/wer.png" alt="Toy Story" class="bottom2-image">
+    <img src="images/buz.png" alt="Toy Story" class="bottom3-image">
+    <img src="images/dno.png" alt="Toy Story" class="bottom4-image">
+    <img src="images/ven.png" alt="Toy Story" class="bottom5-image">
+    <img src="images/dog.png" alt="Toy Story" class="bottom6-image">
+    <img src="images/res.png" alt="Toy Story" class="bottom7-image">
+    <img src="images/sx.png" alt="Just Story" class="top1-image">
+    <img src="images/lv.png" alt="Love Story" class="top2-image">
+    
+
+    <script>
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const container = document.body;
+
+        const audioPaths = {
+            A: 'audio/A.mp3',
+            B: 'audio/B.mp3',
+            C: 'audio/C.mp3',
+            D: 'audio/D.mp3',
+            E: 'audio/E.mp3',
+            F: 'audio/F.mp3',
+            G: 'audio/G.mp3',
+            H: 'audio/H.mp3',
+            I: 'audio/I.mp3',
+            J: 'audio/J.mp3',
+            K: 'audio/K.mp3',
+            L: 'audio/L.mp3',
+            M: 'audio/M.mp3',
+            N: 'audio/N.mp3',
+            O: 'audio/O.mp3',
+            P: 'audio/P.mp3',
+            Q: 'audio/Q.mp3',
+            R: 'audio/R.mp3',
+            S: 'audio/S.mp3',
+            T: 'audio/T.mp3',
+            U: 'audio/U.mp3',
+            V: 'audio/V.mp3',
+            W: 'audio/W.mp3',
+            X: 'audio/X.mp3',
+            Y: 'audio/Y.mp3',
+            Z: 'audio/Z.mp3'
+        };
+
+        letters.split('').forEach(letter => {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.textContent = letter;
+
+            box.addEventListener('mouseover', () => {
+                const audioPath = audioPaths[letter];
+                if (audioPath) {
+                    const audio = new Audio(audioPath);
+                    audio.play();
+                }
+                box.classList.add('animate');
+            });
+
+            box.addEventListener('animationend', () => {
+                box.classList.remove('animate');
+            });
+
+            container.appendChild(box);
+        });
+    </script>
+
+</body>
+</html>
+
+
+
