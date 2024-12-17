@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotions</title>
+  <style>
+    body{
+        background-image: url("images/df.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 5px;
+        font: sans-serif;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 85vh;
+    }
+
+    .box1 {
+      width: 550px;
+      height: 500px;
+      border-radius: 5px;
+      background-color: rgb(247, 247, 84);
+      margin: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+    }
+
+    .box2 {
+        width: 550px;
+        height: 500px;
+        border-radius: 5px;
+        background-color: rgb(49, 49, 236);
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+    .box3 {
+        width: 550px;
+        height: 500px;
+        border-radius: 5px;
+        background-color: rgb(42, 196, 42);
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .box4 {
+        width: 550px;
+        height: 500px;
+        border-radius: 5px;
+        background-color: rgb(211, 73, 211);
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      .box5 {
+        width: 550px;
+        height: 500px;
+        border-radius: 5px;
+        background-color: #ff67d1;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      .box6 {
+        width: 550px;
+        height: 500px;
+        border-radius: 5px;
+        background-color: #ec5324;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      .box7 {
+        width: 550px;
+        height: 500px;
+        border-radius: 5px;
+        background-color: #424388;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      .box8 {
+        width: 550px;
+        height: 500px;
+        border-radius: 5px;
+        background-color: #3dbedf;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      .box9 {
+        width: 550px;
+        height: 500px;
+        border-radius: 5px;
+        background-color: #ee2626;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      .box10 {
+        width: 550px;
+        height: 500px;
+        border-radius: 5px;
+        background-color: #ce98b9;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+      }
+  
+    .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .image img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .buttons {
+      display: flex;
+      width: 800px;
+      height: 50px;
+      justify-content: space-between;
+    }
+  </style>
+
+  <script>
+    window.onload = function() {
+      var boxes = document.querySelectorAll('.box');
+      var currentIndex = 0;
+
+      function showBox(index) {
+        for (var i = 0; i < boxes.length; i++) {
+          boxes[i].style.display = 'none';
+        }
+        boxes[index].style.display = 'flex';
+      }
+
+      function nextBox() {
+        currentIndex = (currentIndex + 1) % boxes.length;
+        showBox(currentIndex);
+      }
+
+      function prevBox() {
+        currentIndex = (currentIndex - 1 + boxes.length) % boxes.length;
+        showBox(currentIndex);
+      }
+
+      // Add event listeners to the buttons
+      document.querySelectorAll('.next').forEach(function(button) {
+        button.addEventListener('click', nextBox);
+      });
+      document.querySelectorAll('.back').forEach(function(button) {
+        button.addEventListener('click', prevBox);
+      });
+
+      // Show the first box by default
+      showBox(currentIndex);
+    };
+  </script>
+
+</head>
+<body>
+
+  <p> Know your Emotions</p>
+
+    <div class="container">
+        <div class="box box1">
+                <div class="image"><img src="images/image1.png" alt="Image 1"></div>
+        <div class="buttons">
+                <button class="back">Back</button>
+                <button class="next">Next</button>
+            </div>
+            </div>
+
+    <div class="container">
+        <div class="box box2">
+                <div class="image"><img src="images/image2.png" alt="Image 2"></div>
+        <div class="buttons">
+                <button class="back">Back</button>
+                <button class="next">Next</button>
+            </div>
+            </div>
+
+    <div class="container">
+        <div class="box box3">
+                <div class="image"><img src="images/image3.png" alt="Image 3"></div>
+        <div class="buttons">
+                <button class="back">Back</button>
+                <button class="next">Next</button>
+            </div>
+            </div>
+
+    <div class="container">
+        <div class="box box4">
+                <div class="image"><img src="images/image4.png" alt="Image 4"></div>
+        <div class="buttons">
+                <button class="back">Back</button>
+                <button class="next">Next</button>
+            </div>
+            </div>
+
+    <div class="container">
+        <div class="box box5">
+                <div class="image"><img src="images/image5.png" alt="Image 5"></div>
+        <div class="buttons">
+                <button class="back">Back</button>
+                <button class="next">Next</button>
+            </div>
+            </div>
+
+    <div class="container">
+        <div class="box box6">
+                <div class="image"><img src="images/image6.png" alt="Image 6"></div>
+        <div class="buttons">
+                <button class="back">Back</button>
+                <button class="next">Next</button>
+            </div>
+            </div>
+    
+    <div class="container">
+        <div class="box box7">
+                <div class="image"><img src="images/image7.png" alt="Image 7"></div>
+        <div class="buttons">
+                <button class="back">Back</button>
+                <button class="next">Next</button>
+            </div>
+            </div>
+
+                    
+    <div class="container">
+        <div class="box box8">
+                <div class="image"><img src="images/image8.png" alt="Image 8"></div>
+        <div class="buttons">
+                <button class="back">Back</button>
+                <button class="next">Next</button>
+            </div>
+            </div>
+
+            
+    <div class="container">
+        <div class="box box9">
+                <div class="image"><img src="images/image9.png" alt="Image 9"></div>
+        <div class="buttons">
+                <button class="back">Back</button>
+                <button class="next">Next</button>
+            </div>
+            </div>
+
+            
+    <div class="container">
+        <div class="box box10">
+                <div class="image"><img src="images/image10.png" alt="Image 10"></div>
+        <div class="buttons">
+                <button class="back">Back</button>
+                <button class="next">Next</button>
+            </div>
+            </div>
+
+
+  </div>
+</body>
+</html>
